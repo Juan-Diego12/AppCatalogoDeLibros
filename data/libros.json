@@ -1,0 +1,6 @@
+[
+  { "id": 1, "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "anio": 1967, "portada": "portadas/cien-anos-de-soledad.jpg" },
+  { "id": 2, "titulo": "Rayuela", "autor": "Julio Cortázar", "anio": 1963, "portada": "portadas/rayuela.jpg" },
+  { "id": 3, "titulo": "El psicoanalista", "autor": "John Katzenbach", "anio": 1999, "portada": "portadas/Psicoanalista.jpg" }
+
+]
