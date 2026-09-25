@@ -1,3 +1,88 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Catálogo</title></head>
-<body><h1>Servidor funcionando</h1></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de Libros</title>
+  <!-- Bootstrap en copia local (sin CDN) -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- ===== Encabezado ===== -->
+  <header>
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <span class="navbar-brand fw-bold">📚 Catálogo de Libros</span>
+        <span class="badge text-bg-secondary" title="Servidor que atendió la solicitud">
+          Servidor: <span id="host-encabezado">cargando...</span>
+        </span>
+      </div>
+    </nav>
+
+    <div class="bg-body-tertiary border-bottom py-4 mb-4">
+      <div class="container">
+        <h1 class="h2 mb-1">Nuestra colección</h1>
+        <p class="text-body-secondary mb-3">
+          Una selección de libros de distintos géneros, épocas y autores.
+        </p>
+        <div class="row g-2">
+          <div class="col-12 col-md-8">
+            <input id="buscador" type="search" class="form-control"
+                   placeholder="Buscar por título o autor..." aria-label="Buscar libros">
+          </div>
+          <div class="col-12 col-md-4">
+            <select id="orden" class="form-select" aria-label="Ordenar libros">
+              <option value="id">Orden original</option>
+              <option value="titulo">Título (A-Z)</option>
+              <option value="anio-asc">Año (más antiguo primero)</option>
+              <option value="anio-desc">Año (más reciente primero)</option>
+            </select>
+          </div>
+        </div>
+        <small id="contador" class="text-body-secondary d-block mt-2"></small>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Catálogo ===== -->
+  <main class="container flex-grow-1 mb-5">
+    <!-- Mensajes de estado: cargando, error o sin resultados -->
+    <div id="estado" class="text-center py-5">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+    <!-- Grilla responsiva: 2 columnas en celular, hasta 5 en pantallas grandes -->
+    <div id="catalogo" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 g-md-4"></div>
+  </main>
+
+  <!-- ===== Banner inferior con los datos del grupo ===== -->
+  <footer class="bg-dark text-light py-4 mt-auto">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <h2 class="h6 text-uppercase text-secondary mb-2">Grupo de trabajo</h2>
+          <ul class="list-unstyled small mb-0">
+            <li>Juan Diego García Albarracín</li>
+            <li>Daniel Josué Narváez Hincapié</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-md-end small">
+          <div>Computación en la Nube · 2026-2</div>
+          <div>Prof. Carlos Eduardo Gómez Montoya</div>
+          <div>Universidad del Quindío</div>
+          <div class="mt-2">
+            Solicitud atendida por el servidor:
+            <strong id="host-pie">cargando...</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

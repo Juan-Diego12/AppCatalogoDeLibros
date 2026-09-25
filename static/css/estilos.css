@@ -1,0 +1,30 @@
+/* Portadas con tamaño uniforme sin deformar la imagen */
+.portada {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background-color: #e9ecef;
+}
+
+/* Efecto al pasar el mouse sobre una tarjeta */
+.libro {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.libro:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Títulos largos: máximo dos líneas con "..." */
+.libro .card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Respeta a quienes desactivan las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  .libro { transition: none; }
+  .libro:hover { transform: none; }
+}
