@@ -1,0 +1,11 @@
+[Unit]
+Description=Catalogo de libros
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=1s
+ExecStart=/home/daniel/catalogo/script.sh
+
+[Install]
+WantedBy=multi-user.target
